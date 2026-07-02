@@ -1339,10 +1339,6 @@ async function main() {
     // no repo clone is available; openclaw bails when the workspace dir is
     // missing without --force).
     if (!explicit(prov.id) && !detectMatch(prov.detect)) continue;
-    if (prov.id === 'claude')   { await installClaude(ctx); continue; }
-    if (prov.id === 'gemini')   { installGemini(ctx); continue; }
-    if (prov.id === 'opencode') { installOpencode(ctx); continue; }
-    if (prov.id === 'openclaw') { installOpenclaw(ctx); continue; }
     if (prov.profile)           { installViaSkills(ctx, prov); continue; }
   }
 
